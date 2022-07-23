@@ -1,0 +1,12 @@
+@use "../Partials/palette";
+
+.header {
+  background-color: green;
+  border: palette.$header-border;
+  &__text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+  }
+}

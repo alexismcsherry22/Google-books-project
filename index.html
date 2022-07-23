@@ -5,23 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Books</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
-    <h1>Google Books Library</h1>
+  <header class="header">
+    <h1 class="header__text">Google Books Library</h1>
   </header>
-  <form>
-    <input type="text" id="searchInput" placeholder="Search for Books here...">
-    <input type="submit" id="searchButton" value="Search">
+  <form class="search-form">
+    <input type="text" class="search-form__input" placeholder="Search for Books here...">
+    <input type="submit" class="search-form__button" id="searchButton" value="Search">
   </form>
   <section class="books-grid">
-    <div class="books__info">
-      <img class="books__image" src="">
-      <p class="books__author"></p>
-      <p class="books__title"></p>
-      <p class="books__desc"></p>
+    <div class="books-grid__info">
+      <img class="books-grid__image" src="">
+      <p class="books-grid__author"></p>
+      <p class="books-grid__title"></p>
+      <p class="books-grid__desc"></p>
     </div>
   </section>
 </body>
-<script src="./googleBooks.js";></script>
+<script src="./googleBooks.js"></script>
 </html>

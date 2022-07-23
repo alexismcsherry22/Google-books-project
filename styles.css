@@ -1,0 +1,59 @@
+.header {
+  background-color: green;
+  border: 3px solid white;
+}
+.header__text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+
+.search-form {
+  background-color: rgb(57, 57, 57);
+  border: 3px solid rgb(255, 255, 255);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.search-form__input {
+  font-size: 30px;
+  width: 900px;
+}
+.search-form__input:hover {
+  background-color: rgba(120, 253, 120, 0.859);
+}
+.search-form__button {
+  font-size: 30px;
+  width: 200px;
+}
+.search-form__button:hover {
+  background-color: green;
+  color: white;
+  border-color: white;
+}
+.search-form__button:active {
+  background-color: black;
+  color: green;
+  border-color: white;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+}
+.books-grid__info {
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border: 2px solid black;
+  margin: 10px;
+}
+.books-grid__image {
+  width: 80px;
+  height: 160px;
+}
+body {
+  background-color: lightblue;
+}

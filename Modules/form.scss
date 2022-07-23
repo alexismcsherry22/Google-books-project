@@ -1,0 +1,33 @@
+@use "../Partials/palette";
+
+.search-form {
+  background-color: rgb(57, 57, 57);
+  border: palette.$form-border;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__input {
+    font-size: 30px;
+    width: 900px;
+  }
+  &__input:hover {
+    background-color: rgba(120, 253, 120, 0.859);
+  }
+
+  &__button {
+    font-size: 30px;
+    width: 200px;
+  }
+  &__button:hover {
+    background-color: green;
+    color: white;
+    border-color: white;
+  }
+  &__button:active {
+    background-color: black;
+    color: green;
+    border-color: white;
+  }
+}
