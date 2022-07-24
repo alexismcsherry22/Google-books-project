@@ -42,6 +42,7 @@
 .books-grid {
   display: grid;
   grid-template-columns: 1fr 2fr auto;
+  flex-wrap: wrap;
 }
 .books-grid__info {
   width: 400px;
@@ -51,9 +52,13 @@
   margin: 10px;
 }
 .books-grid__image {
-  width: 80px;
+  width: 120px;
   height: 160px;
 }
+.books-grid__desc {
+  text-overflow: ellipsis;
+}
+
 body {
   background-color: lightblue;
 }

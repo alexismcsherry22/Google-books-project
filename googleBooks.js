@@ -1,10 +1,12 @@
 
+
 //Search Bar
 const searchInput = document.querySelector("#searchInput");
 //Search Button
 const searchButton = document.querySelector("#searchButton");
 
 const searchBookTerms = async (search) => {
+
     const booksArray = [];
 
     const response = fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`, {
@@ -21,7 +23,7 @@ const searchBookTerms = async (search) => {
         //Temporary Check
         console.log(bookInfo);
         //Create a function that can create elements and feed the values
-        addToNode(parent, "p", bookInfo);
+        //addToNode(parent, "p", bookInfo);
     })
     
 }
