@@ -8,6 +8,26 @@
   color: white;
   font-size: 60px;
 }
+@media only screen and (max-width: 400px) {
+  .header__text {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .header__text {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .header__text {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .header__text {
+    font-size: 60px;
+  }
+}
 
 .search-form {
   background-color: rgb(57, 57, 57);
@@ -18,15 +38,10 @@
   justify-content: space-between;
 }
 .search-form__input {
-  font-size: 30px;
-  width: 900px;
+  width: 100%;
 }
 .search-form__input:hover {
   background-color: rgba(120, 253, 120, 0.859);
-}
-.search-form__button {
-  font-size: 30px;
-  width: 200px;
 }
 .search-form__button:hover {
   background-color: green;
@@ -37,6 +52,42 @@
   background-color: black;
   color: green;
   border-color: white;
+}
+@media only screen and (max-width: 400px) {
+  .search-form__input {
+    font-size: 15px;
+  }
+  .search-form__button {
+    font-size: 30px;
+    width: 140px;
+  }
+}
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .search-form__input {
+    font-size: 20px;
+  }
+  .search-form__button {
+    font-size: 20px;
+    width: 160px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .search-form__input {
+    font-size: 25px;
+  }
+  .search-form__button {
+    font-size: 25px;
+    width: 180px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .search-form__input {
+    font-size: 30px;
+  }
+  .search-form__button {
+    font-size: 30px;
+    width: 200px;
+  }
 }
 
 .books-grid {
