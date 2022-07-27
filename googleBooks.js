@@ -1,72 +1,53 @@
+import { searchBookTerms } from "./query.js";
+
 //Search Bar
 const searchInput = document.querySelector("#searchInput");
 //Search Button
 const searchButton = document.querySelector("#searchButton");
 //Books Grid
 const booksGrid = document.querySelector("#booksGrid");
-//Book Info Block
-const bookInfoBlock = document.querySelector("#bookInfoBlock");
-
-const searchBookTerms = async (parent, block, search) => {
-
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=20`);
-
-    const data = await response.json();
-    const results = data.items;
-    console.log(data);
-    // console.log(results);
-    const books = results.map((book) => {
-        return book.volumeInfo;
-    })
-    console.log(books);
-    
-    books.forEach(async (book) => {
-        addToNode(parent, block, book);
-    })  
-}
 
 //create element and display data
-const addToNode = (parent, block, nodeContent) => {
-    //Block section clone
-    block.cloneNode(false);
+const addToNode = (parent, nodeContent) => {
+    //Create a div called block that will hold the data for image, author, title, and description
+    const block = document.createElement("div");
+    block.classList.add("books-grid__block")
 
     //Image
     const nodeImage = document.createElement('img');
-    nodeImage.className = ".books-grid__image";
-    nodeImage.src = nodeContent.imageLinks;
+    nodeImage.src = nodeContent.imageLinks?.smallThumbnail ? nodeContent.imageLinks?.smallThumbnail : "https://media.wired.com/photos/5a0201b14834c514857a7ed7/master/pass/1217-WI-APHIST-01.jpg";
 
     //Author
     const nodeAuthor = document.createElement('p');
-    nodeAuthor.className = ".books-grid__author";
-    nodeAuthor.innerText = nodeContent.authors;
+    nodeAuthor.innerText = nodeContent.authors ? nodeContent.authors : "Author not found";
 
     //Title
     const nodeTitle = document.createElement('p');
-    nodeTitle.className = ".books-grid__title"
-    nodeTitle.innerText = nodeContent.title;
+    nodeTitle.innerText = nodeContent.title ? nodeContent.title : "Title not found";
 
     //Description
     const nodeDesc = document.createElement('p');
-    nodeDesc.className = ".books-grid__desc"
-    nodeDesc.innerText = nodeContent.description;
+    nodeDesc.innerText = nodeContent.description ? nodeContent.description : "Description not found";
 
-    //Checks
-    console.log(nodeImage);
-    console.log(nodeAuthor);
-    console.log(nodeTitle);
-    console.log(nodeDesc);
-
-    // parent.appendChild(node);
-    parent.appendChild(block);
+    //place all of the nodes as children of the block node and have block become the child of the parent node
     block.appendChild(nodeImage);
     block.appendChild(nodeAuthor);
     block.appendChild(nodeTitle);
     block.appendChild(nodeDesc);
+    parent.appendChild(block);
 }
 
 //use prevent default as we are using a button that's part of a form
 searchButton.addEventListener('click', (event) => {
+    //Stop the form from loading when clicked
     event.preventDefault();
-    searchBookTerms(booksGrid, bookInfoBlock, searchInput.value);
+    //If there is no input value, alert the user
+    if (!searchInput.value) {
+        return alert("Please input value in search bar");
+    }
+    searchBookTerms(booksGrid, searchInput.value);
+    //Reset the search value since we already got the values needed
+    searchInput.value = "";
 });
 
+export default addToNode;

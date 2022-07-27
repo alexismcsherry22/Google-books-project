@@ -1,26 +1,47 @@
+img {
+  width: 100px;
+}
+
 .books-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr auto;
+  grid-template-columns: auto auto auto auto;
   flex-wrap: wrap;
-
-  &__info {
-    width: 400px;
-    height: 300px;
+  justify-content: space-between;
+  &__block {
     background-color: white;
     border: 2px solid black;
+    border-radius: 10px;
+    height: 300px;
+    padding: 10px;
     margin: 10px;
-  }
-  &__image {
-    width: 120px;
-    height: 160px;
-  }
-  &__author {
-
-  }
-  &__title {
-
-  }
-  &__desc {
     text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width: 400px) {
+    &__block {
+      width: 300px;
+    }
+  }
+  
+  @media only screen and (min-width: 401px) and (max-width: 600px) {
+    &__block {
+      width: 330px;
+    }
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    &__block {
+      width: 360px;
+      font-size: 100px;
+    }
+  }
+  
+  @media only screen and (min-width: 901px) {
+    &__block {
+      width: 400px;
+      font-size: 30px;
+    }
   }
 }
+
