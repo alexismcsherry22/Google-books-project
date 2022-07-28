@@ -19,14 +19,17 @@ const addToNode = (parent, nodeContent) => {
 
     //Author
     const nodeAuthor = document.createElement('p');
+    nodeAuthor.className = "books-grid__text";
     nodeAuthor.innerText = nodeContent.authors ? nodeContent.authors : "Author not found";
 
     //Title
     const nodeTitle = document.createElement('p');
+    nodeTitle.className = "books-grid__text";
     nodeTitle.innerText = nodeContent.title ? nodeContent.title : "Title not found";
 
     //Description
     const nodeDesc = document.createElement('p');
+    nodeDesc.className = "books-grid__text";
     nodeDesc.innerText = nodeContent.description ? nodeContent.description : "Description not found";
 
     //place all of the nodes as children of the block node and have block become the child of the parent node
