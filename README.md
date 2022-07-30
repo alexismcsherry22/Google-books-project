@@ -1,41 +1,71 @@
-#Google Books API Search Engine
-Outline
-This project will require you to use both DOM manipulation and Asynchronous programming. The aim is for the user to be able to search for a book inside the Google Books database and to be able to get more details about a certain title.
+# Google Books API Search Engine
 
-MVP
-Create a page that allows users to search for books Page should include the following:
+## Project Outline
 
-Header section introducing the page
+The Google Books Project main requirements was to use both DOM manipulation and Asynchronous programming. The functionality of the search engine was for users have the ability to search through the Google books database and get more details about each title.
 
-Form containing a text input and a submit / search button
+## How to use the Project
 
-A grid of books Instructions:
+This project uses HTML, CSS, SCSS, and JavaScript. Does not require any extensions to run.
 
-When the submit button is clicked you need to request books from the Google books API using the input value as your query string
+## Extensions
 
-The books that you receive should be rendered in the books grid.
+The Extensions used to build this project are:
 
-Each book in the grid should have an image, author, title and description
+-   Live Server by Ritwick Dey
+-   SASS package
 
-The grid should be responsive on different screen sizes
+## MVP
 
-You should use async / await for your request code, NOT .then
+The Project required a single page that included simple styling and included:
 
-Styling (required):
+-   A Header section that introduces the page.
+-   A Form that contains a text input and a submit / search button.
+-   A Grid of books
 
-This application should look good, take some time to pick a palette and plan out your design. You can use tools like Figma or wireframe pro to plan what your application is going to look like. Styling must use BEM, and each block should have its own SCSS file Your palette should use variables
+## Book Grid Requirements
 
-Application Design (required):
+-   When the search / submit button is clicked, a request must be sent to the Google Books API using the input value as the search term string
+-   The books that are received should be rendered in the books grid.
+-   Each book in the grid should have an image, author, title and description
+-   The grid should be responsive on different screen sizes
+-   Should use async / await when requesting code, NOT .then
 
-You should separate DOM functions and non-DOM functions in different modules.
-Write as many non-DOM functions as you can. Functions should do 1 thing, and should be as pure and reusable as possible
-Always use iterators over loops
-Always parameterize and abstract large pieces of duplicate code.
-Bonus (optional, but highly recommended):
-Give feedback to the user when no book results can be found for the query.
-When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
-Useful Resources:
-Google Books API no Auth link
-Using Async Await
-Using Postman to Test APIs
-Download Postman
+## Styling
+
+The Project required a colour palette and a planned design. The styling should use BEM, with each block belonging to its own SCSS file as well as a colour palette file to store palette variables.
+
+## Application Design
+
+The requirements are:
+
+-   The DOM and non-DOM functions should be in their own JavaScript files.
+-   non-DOM functions should do 1 thing and be as pure and reusable as possible.
+-   Use iterators over loops
+-   Parameterize and abstract large pieces of code
+
+Bonus Goals
+
+-   Give feedback when no book results can be found
+-   When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
+
+## Project Design and Functionality
+
+I used a basic header with the text describing exactly what the project is (the title of the project). I also used a form that included a search bar and search button that when clicked with an inputted value, would request and receive a response from the api and display the books in a grid format.
+
+The image below shows the book grid after a search has been submitted:
+
+![Screenshot of Site][screenshot]
+[screenshot]: /Google-books-project/GoogleBooksScreenshot.png "screenshot"
+
+The whole page responds to the screen size changing as all text elements will shrink or enlarge, and the grid will wrap its elements into more or less columns.
+
+The search bar will also trigger an alert to the user in the case that there is no value in the search bar.
+
+## What to do differently next time
+
+I would implement the bonus goals and spend more time understanding the functionality of async and promises.
+
+## Struggles
+
+Failed to correctly read the api object names which often led to questioning why something would not respond but it was because there was nothing to respond with. For example, I didn't realize that the thumbnail object held its own two objects that were where the values were stored.
